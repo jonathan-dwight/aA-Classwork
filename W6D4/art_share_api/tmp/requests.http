@@ -1,0 +1,68 @@
+# get '/users', to: 'users#index'
+GET http://localhost:3000/users/
+
+###
+# get '/users/:id', to: 'users#show'
+GET http://localhost:3000/users/3
+
+###
+# post '/users', to: 'users#create'
+POST http://localhost:3000/users/
+Content-Type: application/x-www-form-urlencoded
+
+user[username]=test
+
+###
+# put '/users/:id', to: 'users#update'
+PUT http://localhost:3000/users/7
+
+###
+# patch '/users/:id', to: 'users#update'
+PATCH http://localhost:3000/users/5
+Content-Type: application/x-www-form-urlencoded
+
+username=changed_username
+
+###
+# delete '/users/:id', to: 'users#destroy'
+DELETE http://localhost:3000/users/8
+
+
+
+
+###
+# get '/artworks', to: 'artworks#index'
+GET http://localhost:3000/artworks
+
+###
+# get '/artworks/:id', to: 'artworks#show'
+GET http://localhost:3000/artworks/2
+
+###
+# post '/artworks', to: 'artworks#create'
+POST http://localhost:3000/artworks/
+Content-Type: application/x-www-form-urlencoded
+
+artwork[title]=test_title
+&artwork[image_url]=test.com
+&artwork[artist_id]=4
+
+###
+# put '/artworks/:id', to: 'artworks#update'
+PUT http://localhost:3000/artworks/4
+Content-Type: application/x-www-form-urlencoded
+
+artwork[title]=updated_title
+&artwork[image_url]=updated_test.com
+&artwork[artist_id]=5
+
+###
+# patch '/artworks/:id', to: 'artworks#update'
+# PATCH http://localhost:3000/artworks/5
+# Content-Type: application/x-www-form-urlencoded
+
+# username=changed_username
+
+###
+# delete '/artworks/:id', to: 'artworks#destroy'
+# DELETE http://localhost:3000/artworks/8

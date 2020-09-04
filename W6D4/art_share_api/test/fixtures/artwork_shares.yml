@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: artwork_shares
+#
+#  id         :bigint           not null, primary key
+#  viewer_id  :integer          not null
+#  artwork_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  viewer_id: 1
+  artwork_id: 1
+
+two:
+  viewer_id: 1
+  artwork_id: 1
