@@ -1,0 +1,39 @@
+<% if type == :new %>
+    <% action_url = cats_url %>
+    <% button_text = "Add Gato" %>
+<% else %>
+    <% action_url = cat_url(cat) %>
+    <% button_text = "Power up el gato" %>
+<% end %>
+
+<form action="<%= action_url %>" method="POST">
+    <% if type == :edit  %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+    <label for="name">Name:
+        <input type="text" name="cat[name]" value="<%= cat.name %>">
+    </label>
+    <br>
+    <label for="birth_date">Birth Date:
+        <input type="text" name="cat[birth_date]" value="<%= cat.birth_date %>">
+    </label>
+    <br>
+    <label for="description">Description:
+        <input type="text" name="cat[description]" value="<%= cat.description %>">
+    </label>
+    <br>
+    <label for="sex">Sex:
+        <input type="text" name="cat[sex]" value="<%= cat.sex %>">
+    </label>
+    <br>
+
+    <label for="color">El Color</label>
+    <select id = "color" name="cat[color]">
+        <option disabled <%= cat.color ? "" : "selected"%>>-- Por Favor Seleccione Color --</option>
+        <% Cat::SET_COLORS.each do |color| %>
+            <option value="<% color %>"<%= cat.color == color ? "selected" : "" %> ><%= color %> </option>
+        <% end %>
+    </select>
+
+
+    <input type="submit" value= "<%= button_text %>">
