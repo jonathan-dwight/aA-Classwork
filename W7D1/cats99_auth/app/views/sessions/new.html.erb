@@ -1,0 +1,13 @@
+<h1>Create a User!</h1>
+
+<form action= "<%=session_url%>" method="POST">
+    
+    <label for="USER_NAME">Username</label>
+    <input type="text" name="user[user_name]" id="USER_NAME">
+
+    <label for="PASSWORD">Password</label>
+    <input type="password" name="user[password]" id="PASSWORD">
+
+    <input type="submit" value="Create User">
+
+</form>
