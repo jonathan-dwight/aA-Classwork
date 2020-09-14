@@ -1,0 +1,37 @@
+/* PHASE 3: Content */
+
+.content {
+    background-color: white;
+    width: 900px;
+    margin: 0 auto;
+    border-left: 1px solid pink;
+    border-bottom: 1px solid pink;
+    border-right: 1px solid pink;
+}
+
+.content-sidebar {
+    float: left;
+    width: 200px;
+    padding: 20px;
+    /* background: green; */
+}
+
+.content-main {
+    float: left;
+    width: 620px;  
+    padding: 20px;
+    /* background: purple; */
+} 
+
+/* - Total Size Container: 900px
+- Total Size Sidebar: 240px
+- Total Size Content: 660px */
+.content h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.content p {
+
+}
