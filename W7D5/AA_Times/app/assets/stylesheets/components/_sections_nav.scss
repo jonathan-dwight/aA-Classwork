@@ -1,0 +1,26 @@
+.section-nav-header{
+    padding: 5px;
+    border-bottom: 2px solid pink;
+}
+
+.section-nav {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.section-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $sans-serif;
+    padding: 7px;
+}
+
+
+.section-nav a {
+    color: black;
+}
+
+.section-nav li:hover {
+    background-color: green;
+}

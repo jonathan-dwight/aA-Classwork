@@ -1,0 +1,59 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px ;
+    
+}
+
+
+.left-nav > ul,
+.right-nav > ul {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav > ul > li {
+    font-family: $sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 7px 9px;
+}
+
+.right-nav > ul > li {
+    padding: 0px 2px;
+
+}
+.right-nav li > button{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    font-size: 11px;
+    background-color: $light-blue;
+    color: white;
+    padding: 4px 4px ;
+    border-radius: 4px;
+    border-color :pink;
+}
+.right-nav > ul > li:last-of-type {
+    font-size: 17px;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+    background: green;
+    
+}
+
+.left-nav span {
+    margin-left: 10px;
+}
+
+
+.right-nav i {
+    font-size: 16px;
+} 
+
+// .fa-cog:hover {
+//     display: block;
+//     font-size: 16px;
+// } 
