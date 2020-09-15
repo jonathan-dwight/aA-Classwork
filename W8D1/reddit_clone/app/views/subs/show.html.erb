@@ -1,0 +1,23 @@
+<h2><%= @sub.title %></h2>
+
+<h3>Description</h3>
+<%= @sub.description %> <br>
+<br>
+
+<a href="<%= new_post_url %>">Make a new post!</a>
+<br>
+<br>
+<% if !@sub.posts.empty? %>
+    <% @sub.posts.each do |post| %>
+        <a href="<%= post_url(post.id) %>"><li><%= post.title %></li></a>
+    <% end %>
+<% end %>
+<br>
+<% if current_user.id == @sub.user_id %>
+    <a href="<%= edit_sub_url(@sub.id) %>">Edit Sub!</a><br>
+<% end %>
+<br>
+
+
+
+<!-- NEED LINK FOR MAKE A NEW POST!-->
