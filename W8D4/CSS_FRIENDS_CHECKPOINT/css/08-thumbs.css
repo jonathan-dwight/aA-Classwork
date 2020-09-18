@@ -1,0 +1,67 @@
+/* PHASE 8: Thumbs */
+
+/* Display 9 photos */
+/* add left and right margin: nth-child(3n) */
+/* .thumb class */ 
+
+
+.profile-friends {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    display: block;
+    position: relative;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.thumb > img {
+    border-radius: 5px;
+}
+
+.profile-friends > li:nth-child(3n) {
+    margin: 0 10px 10px 0;  
+}
+
+.thumb:after{
+    display:none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    content: attr(title);
+    padding: 5px 10px;
+    bottom: 65px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.thumb:before{
+    content: "";
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: -7px;
+    transform: translateX(-50%);
+    border-top: 5px solid #000;
+    border-bottom: 0;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
+.thumb:hover:before,
+.thumb:hover:after {
+    display: block;
+}
+
+.thumb img {
+    border-radius: 5px;
+}

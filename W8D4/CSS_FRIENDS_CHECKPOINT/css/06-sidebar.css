@@ -1,0 +1,50 @@
+/* PHASE 6: Sidebar */
+
+
+.profile-picture {
+    display: block;
+    margin-top: -125px; 
+    position: relative;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.profile-picture > img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.profile-nav{
+    margin: 20px 0;
+}
+
+
+.profile-nav > li {
+    border-top: 1px solid lightgray;
+    margin: 7px;
+    padding-top: 7px;
+    font-weight: bold;
+    list-style: none;
+    
+}
+
+
+.profile-nav > li:last-child{
+    border-bottom: 1px solid lightgray;
+    list-style: none;
+    padding-bottom: 7px;
+}
+/* pseudosel? => :last-child, :nth-child ? */
+
+.profile-info > h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-info{
+    margin: 20px 0;
+    
+}
+
+
+

@@ -1,0 +1,33 @@
+/* PHASE 9: Forms */
+.thumb > img {
+    display: 
+    border-radius: 5px;
+}
+
+#jacky-button { /*ugly*/
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px
+    
+}
+
+/* .content:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 240px;
+    width: 1px;
+    background: #ccc;
+} */
+
+.form{
+    margin-bottom: 20px;
+}
+
+.button-alternative > strong{
+    font-weight: bold;
+}
