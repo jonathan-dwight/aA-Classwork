@@ -10,39 +10,56 @@ class SessionForm extends React.Component {
             password: "",
             email: ""
         }
-        this.updateName = this.updateName.bind(this);
-        this.updatePassword = this.updatePassword.bind(this);
-        this.updateEmail = this.updateEmail.bind(this);
+        // this.updateName = this.updateName.bind(this);
+        // this.updatePassword = this.updatePassword.bind(this);
+        // this.updateEmail = this.updateEmail.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleChange = this.handleChange.bind(this);
         //have to look into using handleChange???
         //NEED TO CHECK WHY AFTER CREATING A USER IT CANT'T LOG OUT   
     }
 
-    updateName(e) {
-        this.setState({ name: e.target.value})
-    }
 
-    updatePassword(e) {
-        this.setState({ password: e.target.value })
+    handleInput(field) {
+        return (e) => this.setState({ [field] : e.currentTarget.value})
     }
+    // updateName(e) {
+    //     this.setState({ name: e.target.value})
+    // }
 
-    updateEmail(e) {
-        this.setState({ email: e.target.value })
-    }
+    // updatePassword(e) {
+    //     this.setState({ password: e.target.value })
+    // }
+
+    // updateEmail(e) {
+    //     this.setState({ email: e.target.value })
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
         let user = this.state;
         this.props.processForm(user).then(
-            this.props.history.push("/")
-        )
+            () => this.props.history.push("/")
+        ).fail(() => this.props.history.push(`/${this.props.formType}`))
+        //need to ask a question on how this is happening
         this.setState({
             name: "",
             password: "",
             email: ""
         });
 
+    }
+    //want to figure out when to use it... when session form unomunts.... also switching with sessionforums
+    //componentdidUpdate
+    //componentwillUnmount -
+    //clear session_errors
+
+    // componentDidUpdate() {
+    //     return dispatch(this.props.clearForm())
+    // }
+
+    componentWillUnmount() {
+        return dispatch(this.props.clearErrors())
     }
 
     render() {
@@ -52,7 +69,7 @@ class SessionForm extends React.Component {
 
         const emailInput = (this.props.formType === "login") ? null : (
             <label>Email:
-                <input type="text" onChange={this.updateEmail} value={this.state.email} />
+                <input type="text" onChange={this.handleInput("email")} value={this.state.email} />
             </label>
         );
 
@@ -76,11 +93,11 @@ class SessionForm extends React.Component {
                 {buttonLog}
                 <h2>{header}</h2>
                 <label>Username:
-                    <input type="text" onChange={this.updateName} value={this.state.name} />
+                    <input type="text" onChange={this.handleInput("name")} value={this.state.name} />
                 </label>
                 {emailInput}
                 <label>Password:
-                    <input type="password" onChange={this.updatePassword} value={this.state.password}/>
+                    <input type="password" onChange={this.handleInput("password")} value={this.state.password}/>
                 </label>
                 {errors}
                 <input type="submit"/>
