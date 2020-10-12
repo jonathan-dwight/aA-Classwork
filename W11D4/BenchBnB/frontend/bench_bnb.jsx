@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import { signup, login, logout } from "./actions/session_actions"
+import { fetchBenches } from "./actions/benches_action"
 import configureStore from "./store/store"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchBenches = fetchBenches
 });
 
 let user1 = {name: "JD", email: "jd@aa.io", password: "password"}
